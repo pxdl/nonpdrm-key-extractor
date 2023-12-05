@@ -62,7 +62,7 @@ def main():
 	    # Save [contentid].txt with key
 	    out_dir.joinpath("{}.txt".format(contentid)).write_text((hex(key))[2:].upper())
 
-	    messagebox.showinfo("Info", "Exported files successfully!")
+	    messagebox.showinfo("Info", "Exported files successfully!\n\nOutput folder: {}".format(out_dir))
 
 if __name__ == '__main__':
     main()
