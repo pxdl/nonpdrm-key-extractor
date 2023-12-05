@@ -37,15 +37,14 @@ def getContentID(filepath):
 
 def getTitleID(filepath):
     with open(filepath, "rb") as f:
-         # Get Title ID
+        # Get Title ID
         f.seek(23)
-        text = f.read(9).decode('ascii')
-        titleid = titleid + text
+        titleid = f.read(9).decode('ascii')
         return titleid
 
 def getKey(filepath):
-    # Get key
     with open(filepath, "rb") as f:
+        # Get key
         f.seek(80)
         key = f.read(16)
         return key
