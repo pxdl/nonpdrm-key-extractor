@@ -214,7 +214,6 @@ class MainGUI:
         self.key_entry.insert(0, getKey(abs_path).hex().upper())
 
 root = tk.Tk()
-root.iconbitmap('icon.ico')
 maingui = MainGUI(root)
 
 # If no arguments are passed through command line, run the GUI
