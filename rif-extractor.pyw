@@ -29,25 +29,18 @@ def checkNoNPDRM(filepath):
                 return True
 
 def getContentID(filepath):
-    contentid = ''
     with open(filepath, "rb") as f:
         # Get Content ID
         f.seek(16)
-        for i in range(0,36):
-            text = f.read(1).decode('ascii')
-            contentid = contentid + text
-            i = i + 1
+        contentid = f.read(36).decode('ascii')
         return contentid
 
 def getTitleID(filepath):
-    titleid = ''
     with open(filepath, "rb") as f:
          # Get Title ID
         f.seek(23)
-        for i in range(0,9):
-            text = f.read(1).decode('ascii')
-            titleid = titleid + text
-            i = i + 1
+        text = f.read(9).decode('ascii')
+        titleid = titleid + text
         return titleid
 
 def getKey(filepath):
