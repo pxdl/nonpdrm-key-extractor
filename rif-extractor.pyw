@@ -60,8 +60,8 @@ class MainGUI:
             region = "US"
         elif titleid[3] in EU:
             region = "EU"
-        elif titleid[3] in US:
-            region = "EU"
+        elif titleid[3] in KO:
+            region = "KO"
         
         pkg_info = ("Content ID: {}\nTitle ID: {}\nRegion: {}\nLicense Key: {}".format(contentid, titleid, region, key.hex().upper()))
         messagebox.showinfo("Info", pkg_info)
