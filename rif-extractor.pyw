@@ -24,8 +24,8 @@ class MainGUI:
         self.filename = filedialog.askopenfilename(initialdir = "/",title = "Select license file",filetypes = (("bin files","*.bin"),("rif files","*.rif"),("all files","*.*")))
         abs_path = Path(self.filename)
         parent_dir = Path(abs_path).parent
-        out_dir = parent_dir.joinpath('out')
-        out_dir.mkdir(exist_ok = True, parents = True)
+
+
 
         contentid = ''
         titleid = ''
@@ -36,7 +36,9 @@ class MainGUI:
 
 
         with open(abs_path, "rb") as f:
-            f.seek(16)
+            if (f.read(16)).hex() != '0001000100010002efcdab8967452301':
+                messagebox.showerror("Error", "Not a valid NoNPDRM license.")
+                return
 
             # Get Content ID and Title ID
             for i in range(0,36):
@@ -63,6 +65,9 @@ class MainGUI:
         
         pkg_info = ("Content ID: {}\nTitle ID: {}\nRegion: {}\nLicense Key: {}".format(contentid, titleid, region, key.hex().upper()))
         messagebox.showinfo("Info", pkg_info)
+
+        out_dir = parent_dir.joinpath('out')
+        out_dir.mkdir(exist_ok = True, parents = True)
 
         # Save key.bin
         with open(out_dir.joinpath('key.bin'), "wb") as keybin:
