@@ -2,7 +2,7 @@
 
 A Python tool to extract, inspect, and rebuild NoNPDRM license files for the PS Vita. Supports zRIF encoding/decoding for compatibility with NPS Browser, PKGj, and NoPayStation databases.
 
-![image](https://user-images.githubusercontent.com/17756301/30679170-ec33124c-9e6d-11e7-809d-bff9e9185aae.png)
+![screenshot](.github/screenshot.png)
 
 ## Requirements
 
