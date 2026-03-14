@@ -18,7 +18,7 @@ pip install customtkinter
 Running without arguments launches the GUI:
 
 ```
-python rif-extractor.py
+python vita-rif-tools.py
 ```
 
 ### GUI
@@ -35,41 +35,41 @@ A status bar at the bottom shows feedback inline without popups.
 
 **Show license info:**
 ```
-python rif-extractor.py info license.rif
-python rif-extractor.py info work.bin
-python rif-extractor.py info -d license.rif   # detailed view (all fields + zRIF)
+python vita-rif-tools.py info license.rif
+python vita-rif-tools.py info work.bin
+python vita-rif-tools.py info -d license.rif   # detailed view (all fields + zRIF)
 ```
 
 **Export key to `.bin` file:**
 ```
-python rif-extractor.py export license.rif
-python rif-extractor.py export license.rif -o ./output
+python vita-rif-tools.py export license.rif
+python vita-rif-tools.py export license.rif -o ./output
 ```
 
 **Rebuild a `.rif` license from Content ID and key:**
 ```
-python rif-extractor.py rebuild <CONTENT_ID> <HEX_KEY>
-python rif-extractor.py rebuild <CONTENT_ID> <HEX_KEY> --work-bin    # output as work.bin
-python rif-extractor.py rebuild <CONTENT_ID> <HEX_KEY> -o ./output
+python vita-rif-tools.py rebuild <CONTENT_ID> <HEX_KEY>
+python vita-rif-tools.py rebuild <CONTENT_ID> <HEX_KEY> --work-bin    # output as work.bin
+python vita-rif-tools.py rebuild <CONTENT_ID> <HEX_KEY> -o ./output
 ```
 
 **Batch extract keys from a directory:**
 ```
-python rif-extractor.py batch ./licenses
-python rif-extractor.py batch ./licenses -o ./output
+python vita-rif-tools.py batch ./licenses
+python vita-rif-tools.py batch ./licenses -o ./output
 ```
 
 **Decode a zRIF string to `.rif` file:**
 ```
-python rif-extractor.py zrif-decode <ZRIF_STRING>
-python rif-extractor.py zrif-decode <ZRIF_STRING> --work-bin   # output as work.bin
-python rif-extractor.py zrif-decode <ZRIF_STRING> -o ./output
+python vita-rif-tools.py zrif-decode <ZRIF_STRING>
+python vita-rif-tools.py zrif-decode <ZRIF_STRING> --work-bin   # output as work.bin
+python vita-rif-tools.py zrif-decode <ZRIF_STRING> -o ./output
 ```
 
 **Encode a `.rif` file to zRIF string:**
 ```
-python rif-extractor.py zrif-encode license.rif
-python rif-extractor.py zrif-encode work.bin
+python vita-rif-tools.py zrif-encode license.rif
+python vita-rif-tools.py zrif-encode work.bin
 ```
 
 ## Features
